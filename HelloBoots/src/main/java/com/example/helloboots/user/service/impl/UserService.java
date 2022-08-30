@@ -1,9 +1,9 @@
-package com.example.helloboots.service.impl;
+package com.example.helloboots.user.service.impl;
 
-import com.example.helloboots.entity.User;
-import com.example.helloboots.service.IUserService;
-import com.example.helloboots.store.IUserStore;
-import com.example.helloboots.vo.UserVO;
+import com.example.helloboots.user.entity.User;
+import com.example.helloboots.user.service.IUserService;
+import com.example.helloboots.user.store.IUserStore;
+import com.example.helloboots.user.dto.UserRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,7 +38,7 @@ public class UserService implements IUserService
     }
 
     @Override
-    public List<User> findAll(UserVO userVO) {
-        return this.userStore.retrieveAll(userVO);
+    public List<User> findAll(UserRequestDto userRequestDto) {
+        return this.userStore.retrieveAll(userRequestDto);
     }
 }

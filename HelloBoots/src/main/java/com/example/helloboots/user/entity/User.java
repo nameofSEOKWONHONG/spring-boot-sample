@@ -1,5 +1,6 @@
-package com.example.helloboots.entity;
+package com.example.helloboots.user.entity;
 
+import javax.validation.constraints.NotEmpty;
 import java.util.UUID;
 
 public class User {
@@ -7,14 +8,26 @@ public class User {
     private String name;
     private String email;
 
+    /**
+     * ROLE_ID
+     */
+    private String roleId;
+
+    @NotEmpty
+    private String compId;
+    @NotEmpty
+    private String deptId;
+
     public User() {
         id = UUID.randomUUID().toString();
     }
 
-    public User(String name, String email) {
+    public User(String name, String email, String compId, String deptId) {
         this();
         this.name = name;
         this.email = email;
+        this.compId = compId;
+        this.deptId = deptId;
     }
 
     public String getId() {
@@ -39,5 +52,21 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getCompId() {
+        return compId;
+    }
+
+    public void setCompId(String compId) {
+        this.compId = compId;
+    }
+
+    public String getDeptId() {
+        return deptId;
+    }
+
+    public void setDeptId(String deptId) {
+        this.deptId = deptId;
     }
 }

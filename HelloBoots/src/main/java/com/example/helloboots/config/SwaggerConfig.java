@@ -18,8 +18,8 @@ import java.util.Set;
 public class SwaggerConfig {
 
     private ApiInfo swaggerInfo() {
-        return new ApiInfoBuilder().title("IoT API")
-                .description("IoT API Docs").build();
+        return new ApiInfoBuilder().title("spring boot sample api")
+                .description("spring boot sample API Docs").build();
     }
 
     @Bean
@@ -28,7 +28,7 @@ public class SwaggerConfig {
                 .consumes(getConsumeContentTypes())
                 .produces(getProduceContentTypes())
                 .apiInfo(swaggerInfo()).select()
-                .apis(RequestHandlerSelectors.basePackage("com.example.helloboots.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.example.helloboots"))
                 .paths(PathSelectors.any())
                 .build()
                 .useDefaultResponseMessages(false);

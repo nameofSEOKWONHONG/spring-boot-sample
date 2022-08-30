@@ -1,9 +1,8 @@
-package com.example.helloboots.controller;
+package com.example.helloboots.user.controller;
 
-import com.example.helloboots.entity.User;
-import com.example.helloboots.service.IUserService;
-import com.example.helloboots.vo.UserVO;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.helloboots.user.entity.User;
+import com.example.helloboots.user.service.IUserService;
+import com.example.helloboots.user.dto.UserRequestDto;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,7 +20,7 @@ public class UserController {
     public User getUser(String id) { return this.userService.find(id);}
 
     @GetMapping("/users")
-    public List<User> getUsers(UserVO userVO) { return this.userService.findAll(userVO); }
+    public List<User> getUsers(UserRequestDto userRequestDto) { return this.userService.findAll(userRequestDto); }
 
     @PostMapping("/register")
     public String register(User user) {
